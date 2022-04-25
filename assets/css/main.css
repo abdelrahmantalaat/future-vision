@@ -1,0 +1,412 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+.main-hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(@/assets/images/mainbac.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+}
+.main-card {
+  max-width: 1000px !important;
+  width: 800px;
+}
+.main-text {
+  color: #ffffff;
+}
+/* -------------------------------------------------------------- */
+/* navbar */
+.navbar-brand img {
+  width: 200px;
+  height: auto;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+.nav-link {
+  color: #ffcc53;
+}
+.nav-link:hover {
+  color: #ffffff;
+}
+/* -------------------------------------------------------------- */
+/* unversities */
+.uni-info-pageheader {
+  width: 100%;
+  position: relative;
+  height: 102vh;
+  background-image: url(@/assets/images/uni-headerbac.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.uni-info-pageheader-text {
+  color: #ffffff;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.uni-info-pageheader-img {
+  width: 100%;
+}
+/* ----------------------------------- */
+/* uni-sec */
+.uni-main {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.uni-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.uni-cover img {
+  width: 100%;
+  height: 100%;
+}
+.uni-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 70%;
+  top: 0;
+  left: 0;
+  /* z-index: 1; */
+}
+.uni-img {
+  width: 100%;
+  height: 100%;
+  /* border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; */
+}
+.uni-img img {
+  width: 100%;
+  height: 100%;
+}
+.uni-name {
+  font-weight: bold;
+  color: #ffffff;
+}
+.college-slide {
+  width: 240px;
+  color: #e4e4e4;
+}
+.slick-arrow {
+  display: none !important;
+}
+.location {
+  margin-top: 20px;
+}
+.location img {
+  width: 20px;
+}
+.location span {
+  color: #ffcc53;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.uni-row {
+  margin-top: 180px !important;
+}
+.main-login {
+  width: 300px;
+  height: 50px;
+  background: none;
+  border: 4px solid #ffcc53;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 40px;
+}
+.main-login:hover {
+  background-color: #ffcc53;
+  color: #ffffff;
+}
+.main-signup {
+  width: 300px;
+  height: 50px;
+  background: #ffcc53;
+  border: 4px solid #ffcc53;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+.v-carousel__controls {
+  display: none !important;
+}
+v-carousel {
+  height: 100vh !important;
+}
+.v-window {
+  height: 100vh !important;
+}
+.v-image {
+  height: 100vh !important;
+}
+.uni-con {
+  z-index: 1000;
+}
+.v-window__next {
+  right: 0;
+}
+/* ---------------------------------- */
+/* login */
+.login-hero {
+  height: 100vh;
+  /* background-image: url(../images/signbac.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   /* filter: blur(6px); */
+  /* -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);  */
+}
+.loginbtn {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 300px;
+  height: 50px;
+  background: none !important;
+  border: 4px solid #ff892f;
+  border-radius: 20px;
+  color: #ffffff !important;
+}
+.loginbtn:hover {
+  background-color: #000 !important;
+  color: #ffffff !important;
+}
+.loginForm {
+  width: 400px;
+  height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 300px;
+
+  padding: 10px;
+}
+.logtext {
+  margin-top: 230px;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 40px;
+}
+.theme--light.v-input input {
+  color: #ffffff !important;
+}
+.theme--light.v-label {
+  color: #ffffff !important;
+}
+.v-text-field.v-input--has-state > .v-input__control > .v-input__slot:before {
+  color: #ffffff !important;
+}
+.v-text-field > .v-input__control > .v-input__slot:after {
+  border-color: #ffffff !important;
+}
+.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+  border-color: #ffffff !important;
+}
+.v-messages__message {
+  color: red !important;
+}
+.baclog-img {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.baclog-img img {
+  width: 100%;
+  height: 100%;
+  filter: blur(6px);
+}
+/* -------------------------------- */
+/* question */
+.questions {
+  background-color: #2d2d2d;
+  width: 100%;
+  height: 100vh;
+}
+.questmain {
+  color: #ff892f;
+  width: 100%;
+  font-weight: bold;
+}
+.timer {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  color: #ffffff;
+}
+.question {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  padding: 50px;
+  border-radius: 20px;
+}
+.question p {
+  font-weight: bold;
+}
+.quesnav {
+  width: 350px;
+  height: 100px;
+  background-color: #ff892f;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 30px;
+  display: block;
+  padding-top: 25px;
+}
+
+.navigations {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.quesprev {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+/* ----------------------------- */
+/* result */
+.result-hero {
+  width: 100%;
+  height: auto;
+  background-color: #0d2c48;
+}
+.pro-img {
+  width: 200px;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.pro-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.result-text h1 {
+  color: #ffffff;
+}
+.result-text h2 {
+  color: #ff892f;
+  font-weight: bold;
+}
+.uni-head {
+  color: #ff892f;
+}
+.result-uni {
+  color: #ffffff;
+}
+.load-infobtn {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 400px !important;
+  height: 60px !important;
+  background: #ff892f !important;
+
+  border-radius: 40px !important;
+  color: #ffffff !important;
+}
+.create-btn span {
+  color: #ff892f;
+}
+.create-btn span:hover {
+  text-decoration: none;
+}
+.create-btn:hover {
+  text-decoration: none;
+}
+/* --------------------------------------- */
+/* profile  */
+.profile-info-sec {
+  height: 50vh;
+  background-image: url(@/assets/images/profilebac.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.profile-img {
+  width: 200px;
+  height: 200px;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.profile-info {
+  color: #ffffff;
+  width: 100%;
+}
+.profile-info button {
+  width: 150px;
+  height: 40px;
+  background: #ff892f !important;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff !important;
+}
+.pro-info-btn{
+  color: #ffffff !important;
+}
+.pro-info-btn:hover{
+  text-decoration: none;
+}
+.pro-info-row {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+.more-info-img {
+  width: 100%;
+  height: 200px;
+}
+.more-info-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+}
+.more-info-text {
+  color: #ffffff;
+  font-weight: bold;
+}
+.more-info-con {
+  background-color: #0d2c48;
+  border-radius: 40px;
+}
+.more-info-row {
+  border-bottom: 1px solid #ffffff;
+}
+.new-test{
+  width: 300px;
+  height: 50px;
+  background: #ff892f !important;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff !important; 
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  padding-top: 10px;
+}
