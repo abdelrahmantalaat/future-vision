@@ -45,42 +45,10 @@ and internationally.</p>
          
          
     <v-carousel>
+   
     <v-carousel-item
-      
-      
-    >
-         <div class="container uni-con">
-           <div class="uni-cover">
-             <img src="../assets/images/hoaras.png" alt="">
-         </div>
-         <div class="uni-layer"></div>
-             <div class="row uni-row" style="margin-top:180px">
-                 <div class="col-md-6">
-                     <div class="uni-img">
-                          <img src="../assets/images/hoaras.png" alt="">
-                     </div>
-                 </div>
-                 <div class="col-md-6 mt-5">
-                     <h1 class="uni-name">Horus</h1>
-                     <h1 class="uni-name">University</h1>
-                     <div class="college-slide">
-                        <VueSlickCarousel v-bind="slickOptions" >
-                            <div>faculty of nursing</div>
-                            <div>faculty of engineering</div>
-                            <div>faculty of medicine</div>
-                            <div>faculty of culture</div>
-                        </VueSlickCarousel>
-                     </div>
-                     <div class="location">
-                         <img src="../assets/images/Path 5.png" alt="" style="display:inline-block;">
-                         <span>Cairo</span>
-                     </div>
-                 </div>
-             </div>
-         </div>
-    </v-carousel-item>
-    <v-carousel-item
-      
+      :key="index"
+            v-for="(list, index) in lists"
       reverse-transition="fade-transition"
       transition="fade-transition"
     >
@@ -96,7 +64,7 @@ and internationally.</p>
                      </div>
                  </div>
                  <div class="col-md-6 mt-5">
-                     <h1 class="uni-name">russian</h1>
+                     <h1 class="uni-name">{{ list.name }}</h1>
                      <h1 class="uni-name">University</h1>
                      <div class="college-slide">
                         <VueSlickCarousel v-bind="slickOptions" >
@@ -108,7 +76,7 @@ and internationally.</p>
                      </div>
                      <div class="location">
                          <img src="../assets/images/Path 5.png" alt="" style="display:inline-block;">
-                         <span>Cairo</span>
+                         <span>{{ list.location }}</span>
                      </div>
                  </div>
              </div>
@@ -137,6 +105,7 @@ export default {
   name: 'MyComponent',  
   data() {
       return {
+          lists:[],
          slickOptions:{
              autoplay:true,
               autoplaySpeed:1500
@@ -148,6 +117,17 @@ export default {
          
       }
   },
+  async fetch() {
+    await this.getuniversities()
+  },
+  methods:{
+   async getuniversities() {
+      const unversity = this.$axios.get("")
+      this.lists = await unversity
+      
+
+    },
+  }
 };
 </script>
 <style></style>

@@ -15,7 +15,7 @@
         </div> -->
         <div class="row mt-5">
           <p style="color: #ffffff" class="mt-3 font-weight-bold">
-            Current questions: {{ currentPage }} / {{ items.length }}
+            Current questions: {{ currentPage }} / {{ qunum.length }}
           </p>
           <div
             class="col-md-12"
@@ -68,148 +68,34 @@
 </template>
 <script>
 import Navbar from "../components/navbar.vue";
-const items = [
-  {
-    title: "question1",
-    type: "engineer",
-    body: "what is your last name?",
-    answers: [
-      {
-        text: "kareem",
-        value: "kareem",
-      },
-      {
-        text: "ahmed",
-        value: "ahmed",
-      },
-      {
-        text: "ali",
-        value: "ali",
-      },
-      {
-        text: "omar",
-        value: "omar",
-      },
-    ],
-  },
-  {
-    title: "question2",
-    type: "engineer",
-    body: "did you love your father?",
-    answers: [
-      {
-        text: "yes",
-        value: "yes",
-      },
-      {
-        text: "no",
-        value: "no",
-      },
-    ],
-  },
-  {
-    title: "question3",
-    type: "engineer",
-    body: "what is your mark in english?",
-    answers: [
-      {
-        text: "50",
-        value: "50",
-      },
-      {
-        text: "80",
-        value: "80",
-      },
-      {
-        text: "90",
-        value: "90",
-      },
-      {
-        text: "20",
-        value: "20",
-      },
-    ],
-  },
-  {
-    title: "question4",
-    type: "engineer",
-    body: "you love english languge?",
-    answers: [
-      {
-        text: "yes",
-        value: "yes",
-      },
-      {
-        text: "no",
-        value: "no",
-      },
-    ],
-  },
-  {
-    title: "question5",
-    type: "engineer",
-    body: "what is the name of your city?",
-    answers: [
-      {
-        text: "mansora",
-        value: "mansora",
-      },
-      {
-        text: "nasr city",
-        value: "nasrcity",
-      },
-    ],
-  },
-  {
-    title: "question6",
-    type: "engineer",
-    body: "what is your favourite color?",
-    answers: [
-      {
-        text: "red",
-        value: "red",
-      },
-      {
-        text: "blue",
-        value: "blue",
-      },
-      {
-        text: "green",
-        value: "green",
-      },
-      {
-        text: "yellow",
-        value: "yellow",
-      },
-    ],
-  },
-];
 
+var items = new Array
 export default {
   data() {
     return {
       // timerCount: 6000,
-      items: items,
+      // items: [],
       paginatedItems: items,
       currentPage: 1,
       perPage: 1,
       totalRows: items.length,
       selectedAnswer: [],
       allanswers: [],
+      qunum:items
     };
   },
-  // async fetch() {
-  //   await this.getquestions()
-  // },
+  async fetch() {
+    await this.getquestions()
+  },
   methods: {
-    // async getquestions() {
-    //   const questions = this.$axios.get("https://625c1367c9e78a8cb9b36430.mockapi.io/questions")
-    //   this.items = await questions
-    //   console.log(items)
+    async getquestions() {
 
-    // },
+      const questions = this.$axios.get("https://625c1367c9e78a8cb9b36430.mockapi.io/questions")
+      items.push(questions)
+
+    },
     paginate(page_size, page_number) {
-      let itemsToParse = this.items;
+      let itemsToParse = items;
       this.paginatedItems = itemsToParse.slice(
         page_number * page_size,
         (page_number + 1) * page_size
@@ -224,6 +110,7 @@ export default {
         allanswers: this.allanswers,
       };
       try {
+        
         const res = await this.$axios.post(
           "https://625c1367c9e78a8cb9b36430.mockapi.io/questionsanswer",
           data
@@ -254,6 +141,8 @@ export default {
   //   },
   // },
 };
+  
+
 </script>
 <style>
 .theme--light.v-label {
@@ -266,3 +155,120 @@ export default {
   padding-top: 10px !important;
 }
 </style>
+
+<!-- test = [
+{
+"title": "question1",
+"type": "engineer",
+"body": "what is your last name?",
+"answers": [
+{
+"text": "kareem",
+"value": "kareem"
+},
+{
+"text": "ahmed",
+"value": "ahmed"
+},
+{
+"text": "ali",
+"value": "ali"
+},
+{
+"text": "omar",
+"value": "omar"
+}
+]
+},
+{
+"title": "question2",
+"type": "engineer",
+"body": "did you love your father?",
+"answers": [
+{
+"text": "yes",
+"value": "yes"
+},
+{
+"text": "no",
+"value": "no"
+}
+]
+},
+{
+"title": "question3",
+"type": "engineer",
+"body": "what is your mark in english?",
+"answers": [
+{
+"text": "50",
+"value": "50"
+},
+{
+"text": "80",
+"value": "80"
+},
+{
+"text": "90",
+"value": "90"
+},
+{
+"text": "20",
+"value": "20"
+}
+]
+},
+{
+"title": "question4",
+"type": "engineer",
+"body": "you love english languge?",
+"answers": [
+{
+"text": "yes",
+"value": "yes"
+},
+{
+"text": "no",
+"value": "no"
+}
+]
+},
+{
+"title": "question5",
+"type": "engineer",
+"body": "what is the name of your city?",
+"answers": [
+{
+"text": "mansora",
+"value": "mansora"
+},
+{
+"text": "nasr city",
+"value": "nasrcity"
+}
+]
+},
+{
+"title": "question6",
+"type": "engineer",
+"body": "what is your favourite color?",
+"answers": [
+{
+"text": "red",
+"value": "red"
+},
+{
+"text": "blue",
+"value": "blue"
+},
+{
+"text": "green",
+"value": "green"
+},
+{
+"text": "yellow",
+"value": "yellow"
+}
+]
+}
+] -->
