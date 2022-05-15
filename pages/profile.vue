@@ -14,7 +14,7 @@
                       <h1>Hi  Abdelrahman Talaat</h1>
                       <h3>User name : <span>@Abdelrahman</span></h3>
                       <p>Age : 21</p>
-                      <button><nuxt-link class="pro-info-btn" to="edit-profile">Edit Profile</nuxt-link></button>
+                      <nuxt-link class="pro-info-btn" to="edit-profile">Edit Profile</nuxt-link>
                   </div>
               </div>
           </div>

@@ -8,11 +8,7 @@
             <h1>questions</h1>
           </div>
         </div>
-        <!-- <div class="timer">
-          <h1>
-            {{ timerCount }}
-          </h1>
-        </div> -->
+
         <div class="row mt-5">
           <p style="color: #ffffff" class="mt-3 font-weight-bold">
             Current questions: {{ currentPage }} / {{ qunum.length }}
@@ -23,7 +19,7 @@
             v-for="(item, index) in paginatedItems"
           >
             <div class="question">
-              <p>{{ item.body }}</p>
+              <p>{{ item.body }} is 2000/50 = 40 ?</p>
               <div class="answers mt-5">
                 <v-radio-group v-model="selectedAnswer" mandatory>
                   <v-row>
@@ -40,9 +36,10 @@
             </div>
           </div>
 
-          <div style="width: 100%">
+          <div class="navigation-bar" style="width: 100%">
             <b-pagination
               @change="onPageChanged"
+              pills
               :total-rows="totalRows"
               :per-page="perPage"
               v-model="currentPage"
@@ -55,13 +52,7 @@
         <div class="navigations">
           <button class="btn quesnav subbtn" @click="postanswer">submit</button>
           <!-- <button role="menuitem" type="button" tabindex="-1" aria-label="Go to previous page" class="page-link">Prev</button> -->
-          <nuxt-link to="" class="btn quesnav next-btn mb-3 mt-3"
-            >next</nuxt-link
-          >
         </div>
-        <nuxt-link to="" class="btn quesnav quesprev next-btn mb-3 mt-3"
-          >previous</nuxt-link
-        >
       </div>
     </section>
   </div>
@@ -69,8 +60,9 @@
 <script>
 import Navbar from "../components/navbar.vue";
 
-var items = new Array
+var items = new Array();
 export default {
+  // middleware: 'auth',
   data() {
     return {
       // timerCount: 6000,
@@ -81,18 +73,18 @@ export default {
       totalRows: items.length,
       selectedAnswer: [],
       allanswers: [],
-      qunum:items
+      qunum: items,
     };
   },
   async fetch() {
-    await this.getquestions()
+    await this.getquestions();
   },
   methods: {
     async getquestions() {
-
-      const questions = this.$axios.get("https://625c1367c9e78a8cb9b36430.mockapi.io/questions")
-      items.push(questions)
-
+      const questions = this.$axios.get(
+        "https://625c1367c9e78a8cb9b36430.mockapi.io/questions"
+      );
+      items.push(questions);
     },
     paginate(page_size, page_number) {
       let itemsToParse = items;
@@ -110,7 +102,6 @@ export default {
         allanswers: this.allanswers,
       };
       try {
-        
         const res = await this.$axios.post(
           "https://625c1367c9e78a8cb9b36430.mockapi.io/questionsanswer",
           data
@@ -141,8 +132,6 @@ export default {
   //   },
   // },
 };
-  
-
 </script>
 <style>
 .theme--light.v-label {

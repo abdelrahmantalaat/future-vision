@@ -332,6 +332,9 @@ v-carousel {
 .create-btn span {
   color: #ff892f;
 }
+.forget-btn{
+  color: #ff892f;
+}
 .create-btn span:hover {
   text-decoration: none;
 }
@@ -394,6 +397,7 @@ v-carousel {
 .more-info-con {
   background-color: #0d2c48;
   border-radius: 40px;
+  margin-top: 20px;
 }
 .more-info-row {
   border-bottom: 1px solid #ffffff;
@@ -409,4 +413,19 @@ v-carousel {
   margin-left: auto;
   margin-top: 20px;
   padding-top: 10px;
+}
+.navigation-bar{
+  position: absolute;
+ 
+  left: 44%;
+  bottom: 30%;
+
+  
+}
+.navigation-bar li span{
+  background-color: #ff892f !important;
+  color: #ffffff !important;
+  
+  text-align: center;
+  
 }

@@ -76,7 +76,7 @@ and internationally.</p>
                      </div>
                      <div class="location">
                          <img src="../assets/images/Path 5.png" alt="" style="display:inline-block;">
-                         <span>{{ list.location }}</span>
+                         <span>{{ list.location }} </span>
                      </div>
                  </div>
              </div>

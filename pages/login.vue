@@ -38,14 +38,29 @@
                     type="password"
                     required
                   ></v-text-field>
-                  <nuxt-link to="/signup" class="create-btn"
-                    ><span>create account</span></nuxt-link
-                  >
+                  
+                  <p class="forget-btn">forget password</p>
                 </v-col>
+                
               </v-row>
 
               <v-card-actions>
-                <v-btn class="loginbtn" @click="loginHandler">Login</v-btn>
+                <v-container>
+                   <v-row>
+                 <v-btn class="loginbtn" @click="loginHandler">Login</v-btn>
+                </v-row>
+                
+                <v-row>
+                  <v-col cols="12" class="text-center">
+                      <nuxt-link to="/signup" class="create-btn"
+                    ><span>create account</span></nuxt-link
+                  >
+                </v-col>
+                </v-row>
+                </v-container>
+                
+                
+                
               </v-card-actions>
             </v-form>
           </v-col>

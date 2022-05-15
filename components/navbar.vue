@@ -20,7 +20,7 @@
             ></b-nav-item>
             
         <b-nav-item-dropdown right
-        v-if="$auth.loggedIn">
+        >
           
           <template #button-content>
             <em><img src="../assets/images/person.jpg" class="nav-img" alt="">
