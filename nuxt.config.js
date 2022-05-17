@@ -48,7 +48,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
   ],
-  auth: {
+ auth: {
     strategies: {
       local: {
         token: {
@@ -62,14 +62,14 @@ export default {
           // autoFetch: true
         },
         endpoints: {
-          login: { url: '', method: 'post' },
-          logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/auth/user', method: 'get' }
-        }
+          login: { url: '/login', method: 'post' , propertyName: 'data.token' },
+          logout: { url: '/login', method: 'delete' },
+          user: { url: '/user', method: 'get', propertyName: 'data.user'}
+        },
+        tokenType: ''
       }
     }
   },
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
