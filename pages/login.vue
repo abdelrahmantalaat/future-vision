@@ -9,7 +9,7 @@
         <v-row>
           <v-col cols="12" md="6">
             <div class="logtext text-center">
-              <h2 class="font-weight-bold">Welcome...</h2>
+              <h2 class="font-weight-bold nav-link">Welcome...</h2>
               <h2>Want to know the best college for you....?!</h2>
               <h3 class="mt-3 font-weight-bold text-justify">
                 Just login or create new account then answer some questions and
@@ -39,7 +39,7 @@
                     required
                   ></v-text-field>
                   
-                  <p class="forget-btn">forget password</p>
+                  <p class="forget-btn">Forgotten password?</p>
                 </v-col>
                 
               </v-row>
@@ -53,7 +53,7 @@
                 <v-row>
                   <v-col cols="12" class="text-center">
                       <nuxt-link to="/signup" class="create-btn"
-                    ><span>create account</span></nuxt-link
+                    ><span>Create Account</span></nuxt-link
                   >
                 </v-col>
                 </v-row>
@@ -72,6 +72,7 @@
 </template>
 <script>
 import navbar from "../components/navbar.vue";
+import axios from 'axios';
 export default {
   data: () => ({
     valid: false,
@@ -90,10 +91,20 @@ export default {
         email: this.email,
         password: this.password,
       };
+      // axios.post('http://127.0.0.1:8000/api/login',formdata).then((res)=>{
+      //   console.log(res);
+      //    this.$router.push('/');
+      // })
+      // .catch((err) => {
+      //      console.log(err);
+      //    });
+      
       this.$auth
         .loginWith("local", { data: formdata })
         .then((response) => {
-          this.$router.push(this.localePath("/"));
+          this.$auth.setUser(response.data.user)
+          this.$router.push('/profile');
+          console.log(response.data.user)
         })
         .catch((err) => {
           console.log(err);
