@@ -304,7 +304,7 @@ export default {
     Geographymark: null,
     psychologymark: null,
     percentage: null,
-    imageselected: "",
+    imageselected: null,
     showPassword: false,
     gender: "",
   }),
@@ -340,7 +340,7 @@ export default {
       if (!date) return null;
 
       const [year, month, day] = date.split("-");
-      return `${month}/${day}/${year}`;
+      return `${day}/${month}/${year}`;
     },
     parseDate(date) {
       if (!date) return null;
@@ -373,16 +373,19 @@ export default {
         img: this.imageselected,
         gender: this.gender,
       };
+// console.log(data);
 
       this.$axios
-        .post("https://625c1367c9e78a8cb9b36430.mockapi.io/users", data)
+        .post("/register", data)
         .then((res) => {
+
           this.$router.push("/login");
+
           // if (res !== undefined && res.status == 200) {
 
-          //   console.log(data)
           // }
-        });
+        }).catch(function (error) {     console.log(error);   });
+
     },
   },
 };
