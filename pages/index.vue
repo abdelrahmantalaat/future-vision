@@ -2,17 +2,17 @@
 <div>
   <header class="uni-info-pageheader">
      <navbar />
+     <h1 v-if="$auth.loggedIn"> {{ user.firstname }} </h1>
      <div class="container-fluid pr-5 pl-5">
          <div class="row ">
              <div class="col-md-6" style="margin-top:180px">
-                 <p class="uni-info-pageheader-text mt-5" >Elite egyptian universities that 
-have leadership in 
-education services and scientific 
-research locally, regionally 
-and internationally.</p>
-<nuxt-link to="/login" class="btn main-login ">login</nuxt-link>
+                 <p class="uni-info-pageheader-text mt-5" >
+                   <span>Welcome to Future Vision ..</span> <br>
+Where we will help you find out the the college that suits your interests.
+Answer some few questions and let the rest for us.</p>
+<nuxt-link to="/login" class="btn main-login ">Login</nuxt-link>
           <div>
-            <nuxt-link to="/signup" class="btn main-signup">sign up</nuxt-link>
+            <nuxt-link to="/signup" class="btn main-signup">Sign up</nuxt-link>
           </div>
              </div>
              <div class="col-md-6"  style="margin-top:150px">
@@ -54,13 +54,13 @@ and internationally.</p>
     >
       <div class="container uni-con">
            <div class="uni-cover">
-             <img src="../assets/images/russian.png" alt="">
+             <img :src="list.university_image" alt="">
          </div>
          <div class="uni-layer"></div>
              <div class="row uni-row" style="margin-top:180px">
                  <div class="col-md-6">
                      <div class="uni-img">
-                          <img src="../assets/images/russian.png" alt="">
+                          <img :src="list.university_image" alt="">
                      </div>
                  </div>
                  <div class="col-md-6 mt-5">
@@ -122,7 +122,7 @@ export default {
   },
   methods:{
    async getuniversities() {
-      const unversity = this.$axios.get("")
+      const unversity = this.$axios.get("/list")
       this.lists = await unversity
       
 
